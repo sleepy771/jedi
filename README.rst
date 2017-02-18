@@ -2,7 +2,7 @@
 Jedi - an awesome autocompletion/static analysis library for Python
 ###################################################################
 
-.. note:: This is just jedy fork, with napoleon docstring parsing support.
+.. warning:: This is just jedy fork, with napoleon docstring parsing support.
 
 .. image:: https://secure.travis-ci.org/davidhalter/jedi.png?branch=master
     :target: http://travis-ci.org/davidhalter/jedi
