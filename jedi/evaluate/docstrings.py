@@ -26,6 +26,7 @@ from jedi.parser import ParserWithRecovery, load_grammar
 from jedi.parser.tree import search_ancestor
 from jedi.common import indent_block
 from jedi.evaluate.iterable import SequenceLiteralContext, FakeSequence
+from jedi.evaluate.docstring_convert import convert_docstring
 
 
 DOCSTRING_PARAM_PATTERNS = [
@@ -187,8 +188,9 @@ def _execute_array_values(evaluator, array):
 @memoize_default()
 def follow_param(module_context, param):
     def eval_docstring(docstring):
+        docstr = convert_docstring(docstring)
         return set(
-            [p for param_str in _search_param_in_docstr(docstring, str(param.name))
+            [p for param_str in _search_param_in_docstr(docstr, str(param.name))
                 for p in _evaluate_for_statement_string(module_context, param_str)]
         )
     func = param.get_parent_function()
@@ -204,8 +206,9 @@ def follow_param(module_context, param):
 @memoize_default()
 def find_return_types(module_context, func):
     def search_return_in_docstr(code):
+        docstr = convert_docstring(code)
         for p in DOCSTRING_RETURN_PATTERNS:
-            match = p.search(code)
+            match = p.search(docstr)
             if match:
                 return _strip_rst_role(match.group(1))
 
