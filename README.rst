@@ -1,12 +1,8 @@
-This is fork of official jedi project.
-======================================
-
-This fork also uses sphinx-napoleon docstring parser.
-
-
 ###################################################################
 Jedi - an awesome autocompletion/static analysis library for Python
 ###################################################################
+
+.. note:: This is just jedy fork, with napoleon docstring parsing support.
 
 .. image:: https://secure.travis-ci.org/davidhalter/jedi.png?branch=master
     :target: http://travis-ci.org/davidhalter/jedi
