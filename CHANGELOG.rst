@@ -3,6 +3,11 @@
 Changelog
 ---------
 
+0.10.1 (2017-02-18)
++++++++++++++++++++
+
+- Add support for napoleon-sphinx docstrings.
+
 0.10.0 (2017-02-03)
 +++++++++++++++++++
 
