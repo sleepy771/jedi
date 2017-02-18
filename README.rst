@@ -1,5 +1,5 @@
 This is fork of official jedi project.
-=====================================
+======================================
 
 This fork also uses sphinx-napoleon docstring parser.
 
